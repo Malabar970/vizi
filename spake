@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Сайт-визитка</title>
+  <style>
+    /* Сброс базовых стилей и упрощение работы с элементами */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      /* Добавляем полупрозрачный градиент поверх фонового изображения: */
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://i.pinimg.com/originals/4d/ac/c5/4dacc5ac50da8933c9ef1542f2a267fa.jpg")
+          no-repeat center center fixed;
+      background-size: cover;
+      /* Выбираем светлый цвет для текста, чтобы контрастировать с тёмным фоном */
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* Навигационная панель */
+    nav {
+      /* затемняем фон */
+      background-color: rgba(30, 30, 30, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff7f50; /* оранжевый при наведении */
+    }
+
+    /* "Шапка" сайта (Hero) */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Контейнер для карточек (блоков) */
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Оформление карточек */
+    .card {
+      /* почти белый фон для контраста с белым текстом, 
+         чтобы внутри карточки использовать тёмный текст */
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      /* Цвет текста внутри карточки делаем более тёмным */
+      color: #333;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .card p {
+      text-align: justify;
+      line-height: 1.5;
+      color: #444;
+      white-space: pre-wrap; /* чтобы сохранялись переносы строк */
+    }
+
+    /* Якоря (отступы для плавного перехода к секции) */
+    .anchor {
+      display: block;
+      position: relative;
+      top: -80px; /* чтобы секции не скрывались под навбаром */
+      visibility: hidden;
+    }
+
+    /* Футер */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(30, 30, 30, 0.8);
+      color: #fff;
+      width: 100%;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    /* Адаптивность под мобильные устройства */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .card {
+        max-width: 100%;
+        padding: 15px;
+      }
+
+      .card img {
+        border-radius: 6px 6px 0 0;
+      }
+
+      .cards-container {
+        padding: 10px;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навигационная панель -->
+  <nav>
+    <a href="#azat">Азат</a>
+    <a href="#radmir">Радмир</a>
+  </nav>
+
+  <!-- Приветственный блок (Hero) -->
+  <section class="hero">
+    <h1>Добро пожаловать!</h1>
+    <p>
+      Здесь вы найдёте краткую информацию о двух талантливых ребятах, которые увлекаются 
+      спортом и информационными технологиями.
+    </p>
+  </section>
+
+  <!-- Контейнер для карточек -->
+  <div class="cards-container">
+
+    <!-- Карточка: Валиев Азат Фидаилевич -->
+    <span class="anchor" id="azat"></span>
+    <div class="card">
+      <img src="azat.jpg" alt="Фото Азата" style="width: 100%; border-radius: 8px 8px 0 0;">
+      <h2>Валиев Азат Фидаилевич</h2>
+      <p>
+Валиев Азат Фидаилевич
+Меня зовут Валиев Азат Фидаилевич, я являюсь учеником 10 Б класса школы №11.
+Я проявляю невероятный интерес к информационным технологиям, которые
+открывают мне безграничные возможности для изучения мира и самореализации.
+Каждая новая программа или инновация в IT-сфере вдохновляет меня на эксперименты
+и поиск оригинальных решений.
+
+Кроме того, одним из моих главных увлечений является плавание, которое помогает
+мне укреплять здоровье, тренировать силу воли и развивать выносливость.
+Это удивительный спорт, позволяющий обрести спокойствие, научиться контролировать
+дыхание и ощущать гармонию с собственным телом.
+
+Я твердо верю в будущее, наполненное достижениями и успехами. Кроме того,
+я планирую продолжить совершенствоваться в обоих направлениях.
+      </p>
+    </div>
+
+    <!-- Карточка: Махмутов Радмир Рустамович -->
+    <span class="anchor" id="radmir"></span>
+    <div class="card">
+      <img src="radmir.jpg" alt="Фото Радмира" style="width: 100%; border-radius: 8px 8px 0 0;">
+      <h2>Махмутов Радмир Рустамович</h2>
+      <p>
+Махмутов Радмир Рустамович
+Меня зовут Махмутов Радмир Рустамович,я являюсь учеником 10 Б класса школы №11.
+С самого детства я увлекаюсь спортом — дзюдо, и я вдохновляюсь духом
+и силой воли этого вида спорта. Регулярные тренировки укрепляют моё здоровье,
+развивают силу, выносливость и целеустремлённость, а также учат преодолевать
+трудности на пути к поставленным целям.
+
+Компьютерные технологии являются моей второй страстью, ведь они открывают
+бескрайние горизонты для творчества и саморазвития. Каждый проект или новая программа
+стимулируют меня к постоянному совершенствованию навыков.
+
+В дальнейшем планирую активно развиваться, углубляя знания и достигая
+значимых вершин.
+      </p>
+    </div>
+  <div class="footer-text">
+  <p>Также постараемся показать более подробно, как мы разрабатывали "Сайт-визитку " .</p>
+</div>
+
+  <!-- Футер -->
+  <footer>
+    <p>&copy; 2025. Все права защищены.</p>
+  </footer>
+
+</body>
+</html>
